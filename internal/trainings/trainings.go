@@ -37,12 +37,22 @@ func (t *Training) Parse(datastring string) (err error) {
 		return err
 	}
 
+	if step <= 0 {
+		err := errors.New("Количество шагов должно быть больше 0")
+		return err
+	}
+
 	t.Steps = step
 	t.TrainingType = spl[1]
 
 	dur, err := time.ParseDuration(spl[2])
 
 	if err != nil {
+		return err
+	}
+
+	if dur <= 0 {
+		err := errors.New("Длительность должна быть больше 0")
 		return err
 	}
 
@@ -82,13 +92,7 @@ func (t Training) ActionInfo() (string, error) {
 		return "", err
 	}
 
-	//Тип тренировки: Бег
-	//Длительность: 0.75 ч.
-	//Дистанция: 10.00 км.
-	//Скорость: 13.34 км/ч
-	//Сожгли калорий: 18621.75
-
-	dur := fmt.Sprintf("%d.%02d", int(t.Duration.Hours()), int(t.Duration.Minutes()))
+	dur := fmt.Sprintf("%d.%02d", int(t.Duration.Hours()), int(t.Duration.Minutes())%60)
 
 	return fmt.Sprintf("Тип тренировки: %s\nДлительность: %s ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", tp, dur, dist, averspeed, cal), nil
 
