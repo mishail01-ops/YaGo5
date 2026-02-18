@@ -92,7 +92,7 @@ func (t Training) ActionInfo() (string, error) {
 		return "", err
 	}
 
-	dur := fmt.Sprintf("%d.%02d", int(t.Duration.Hours()), int(t.Duration.Minutes())%60)
+	dur := fmt.Sprintf("%.%2f", t.Duration.Hours())
 
 	return fmt.Sprintf("Тип тренировки: %s\nДлительность: %s ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", tp, dur, dist, averspeed, cal), nil
 
