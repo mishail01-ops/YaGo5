@@ -88,7 +88,7 @@ func (t Training) ActionInfo() (string, error) {
 	//Скорость: 13.34 км/ч
 	//Сожгли калорий: 18621.75
 
-	dur := fmt.Sprintf("%02d.%02d", int(t.Duration.Hours()), int(t.Duration.Minutes())%60)
+	dur := fmt.Sprintf("%d.%02d", int(t.Duration.Hours()), int(t.Duration.Minutes())%60)
 
 	return fmt.Sprintf("Тип тренировки: %s\nДлительность: %s ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", tp, dur, dist, averspeed, cal), nil
 
