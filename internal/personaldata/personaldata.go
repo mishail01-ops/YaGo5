@@ -15,7 +15,9 @@ func (p Personal) Print() {
 	// Имя: <Имя_пользователя>
 	// Вес: <Вес_пользователя>
 	// Рост: <Рост_пользователя>
-	fmt.Println("Имя: ", p.Name)
-	fmt.Println("Вес: ", p.Weight)
-	fmt.Println("Рост: ", p.Height)
+	//fmt.Println("Имя: ", p.Name)
+	//fmt.Println("Вес: ", p.Weight, " кг.")
+	//fmt.Println("Рост: ", p.Height, " м.")
+	fmt.Printf("Имя: %s\nВес: %.2f кг.\nРост: %.2f м.\n", p.Name, p.Weight, p.Height)
+
 }
