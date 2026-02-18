@@ -13,27 +13,6 @@ type DataParser interface {
 
 func Info(dataset []string, dp DataParser) {
 	// TODO: реализовать функцию
-	//var err error
-	//var str string
-	//err = nil
-	//for _, value := range dataset {
-	//	err = nil
-	//	err = dp.Parse(value)
-
-	//	if err != nil {
-	//		log.Println(err)
-	//	}
-	//}
-
-	//err = nil
-
-	//str, err = dp.ActionInfo()
-
-	//if err != nil {
-	//	log.Println(err)
-	//}
-
-	//fmt.Print(str)
 
 	parsedOK := false
 
